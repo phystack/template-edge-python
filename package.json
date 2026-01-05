@@ -1,0 +1,27 @@
+{
+  "name": "phygrid-template-edge-python",
+  "version": "1.0.0",
+  "description": "Phygrid Edge App Template (Python)",
+  "application-type": "module",
+  "container-registry": "omborigridregistry.azurecr.io",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@phystack/cli": "^4.4.38",
+    "@phystack/ts-schema": "^4.4.38",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "devbuild": "mkdir -p build && yarn schema && cp -r src/*.py build/ && cp requirements.txt build/ && touch build/index.html",
+    "bootstrap": "echo init ok",
+    "schema": "mkdir -p build && npx ts-schema src/schema.ts build/",
+    "build": "yarn devbuild && phy app build",
+    "desc": "phy app upload-description",
+    "pub": "phy app publish",
+    "deploy": "phy app deploy"
+  }
+}
