@@ -11,8 +11,8 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
-    "@phystack/cli": "^4.4.38",
-    "@phystack/ts-schema": "^4.4.38",
+    "@phystack/cli": "^4.4.62",
+    "@phystack/ts-schema": "^4.4.62",
     "typescript": "^4.9.5"
   },
   "scripts": {
