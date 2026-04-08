@@ -2,20 +2,23 @@
   "name": "phygrid-template-edge-python",
   "version": "1.0.0",
   "description": "Phygrid Edge App Template (Python)",
-  "application-type": "module",
+  "application-type": "edge",
   "container-registry": "omborigridregistry.azurecr.io",
   "license": "MIT",
   "type": "module",
   "private": true,
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=24.0.0"
   },
   "devDependencies": {
-    "@phystack/cli": "^4.4.62",
-    "@phystack/ts-schema": "^4.4.62",
-    "typescript": "^4.9.5"
+    "@phystack/cli": "^4.4.71",
+    "@phystack/ts-schema": "^4.4.71",
+    "typescript": "~5.9.3"
   },
   "scripts": {
+    "predev": "node scripts/init-settings.js",
+    "dev": "phy simulator run .",
+    "start": "python src/app.py",
     "devbuild": "mkdir -p build && yarn schema && cp -r src/*.py build/ && cp requirements.txt build/ && touch build/index.html",
     "bootstrap": "echo init ok",
     "schema": "mkdir -p build && npx ts-schema src/schema.ts build/",

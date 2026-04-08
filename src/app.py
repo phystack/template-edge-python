@@ -35,14 +35,8 @@ async def main() -> None:
     print(f"Edge instance ID: {instance.id}")
 
     # Get settings
-    settings = client.get_settings()
+    settings = await client.get_settings()
     print(f"Settings: {json.dumps(settings, indent=2)}")
-
-    # Subscribe to settings updates
-    def on_settings_update(new_settings: dict[str, Any]) -> None:
-        print(f"Settings updated: {json.dumps(new_settings, indent=2)}")
-
-    client.on_settings_update(on_settings_update)
 
     # Listen for incoming messages
     def on_message(data: Any, respond: Optional[Any] = None) -> None:
