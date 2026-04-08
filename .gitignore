@@ -3,6 +3,9 @@ build/
 dist/
 *.gridapp
 
+# Generated settings
+src/settings/
+
 # Node.js
 node_modules/
 
