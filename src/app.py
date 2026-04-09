@@ -12,7 +12,7 @@ import signal
 import sys
 from typing import Any, Optional
 
-from phystack.hub_client import PhyHubClient
+from phystack.hub_client import connect_phy_client
 
 
 async def main() -> None:
@@ -20,10 +20,9 @@ async def main() -> None:
     print("Starting Phygrid Edge App (Python)...")
 
     # Connect to PhyHub
-    client = PhyHubClient.from_env()
-    await client.connect()
+    client = await connect_phy_client()
 
-    print(f"Connected to PhyHub")
+    print("Connected to PhyHub")
 
     # Get edge instance
     instance = await client.get_instance()
