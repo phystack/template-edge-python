@@ -1,7 +1,7 @@
 {
-  "name": "phygrid-template-edge-python",
+  "name": "phystack-template-edge-python",
   "version": "1.0.0",
-  "description": "Phygrid Edge App Template (Python)",
+  "description": "PhyStack Edge App Template (Python)",
   "application-type": "edge",
   "container-registry": "omborigridregistry.azurecr.io",
   "license": "MIT",
@@ -11,8 +11,8 @@
     "node": ">=24.0.0"
   },
   "devDependencies": {
-    "@phystack/cli": "^4.4.71",
-    "@phystack/ts-schema": "^4.4.71",
+    "@phystack/cli": "^6.2.0",
+    "@phystack/ts-schema": "^4.4.74",
     "typescript": "~5.9.3"
   },
   "scripts": {
