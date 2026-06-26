@@ -4,7 +4,7 @@ Starter template for scaffolding new Python edge apps on the PhyStack platform.
 
 ## Overview
 
-This repository is a project template used by `@phystack/cli` to scaffold new edge apps. Edge apps run on PhyStack-connected devices without a graphical user interface, executing locally as Docker containers to provide compute power and logic at the edge.
+This repository is a project template used by the `phy` CLI to scaffold new edge apps. Edge apps run on PhyStack-connected devices without a graphical user interface, executing locally as Docker containers to provide compute power and logic at the edge.
 
 This template does not deploy anywhere on its own.
 
@@ -23,7 +23,8 @@ This template does not deploy anywhere on its own.
 - Node.js 24+ (see `.nvmrc`)
 - Yarn 1.x
 - Docker (for container builds)
-- `@phystack/cli` installed globally (`npm i -g @phystack/cli`)
+- `phy` CLI installed globally (`npm i -g @phystack/cli@dev`)
+- `phy-simulator` for local development (`npm i -g @phystack/device-simulator`)
 
 ## Getting Started
 
@@ -33,14 +34,14 @@ This template is used automatically when you create a new edge app with the CLI:
 phy app create
 ```
 
-Select **Edge Application (Python)** when prompted. The CLI will scaffold a new project from this template, configure your container registry and credentials, and install dependencies.
+Select **Edge Application (Python)** when prompted. The CLI will scaffold a new project from this template and install dependencies. Registry credentials are managed via `phy registry login` (stored in your OS keychain).
 
 ### Run Locally with the Simulator
 
 Start the simulator server, then launch your app against it:
 
 ```bash
-phy simulator start
+phy-simulator start
 ```
 
 ```bash
@@ -57,10 +58,11 @@ Build the `.gridapp` package:
 yarn build
 ```
 
-Publish to your tenant (builds the Docker image, pushes to your registry, and uploads the `.gridapp`):
+Publish to your tenant (requires global `phy` CLI with registry credentials configured via `phy registry login`):
 
 ```bash
-yarn pub
+phy app build create <app-id> --file build/bundle.gridapp --image <registry/repo:version> --push --wait
+phy app build publish <app-id> <build-id>
 ```
 
 For the full walkthrough, see the [Build An Edge App](https://build.phystack.com/tutorials/build-your-first-edge-app/) tutorial.
@@ -84,14 +86,11 @@ meta/                 # Device image and metadata for the app listing
 
 | Script | Description |
 |--------|-------------|
-| `yarn dev` | Run the app locally with the simulator (`phy simulator run .`). Automatically generates settings from schema if missing (via `predev` hook). |
+| `yarn dev` | Run the app locally with the simulator (`phy-simulator run .`). Automatically generates settings from schema if missing (via `predev` hook). |
 | `yarn start` | Run the app directly (`python src/app.py`) |
 | `yarn devbuild` | Generate the JSON settings schema and copy Python sources to build directory |
 | `yarn schema` | Generate JSON schema from `src/schema.ts` |
-| `yarn build` | Dev build + `phy app build` to package the `.gridapp` |
-| `yarn pub` | Build Docker image, push to registry, and publish the `.gridapp` to your tenant |
-| `yarn deploy` | Deploy the app directly to a device in developer mode |
-| `yarn desc` | Upload the app description to your tenant |
+| `yarn build` | Dev build + `phy app package` to create the `.gridapp` archive |
 
 ## Related Documentation
 

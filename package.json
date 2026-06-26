@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "PhyStack Edge App Template (Python)",
   "application-type": "edge",
-  "container-registry": "omborigridregistry.azurecr.io",
   "license": "MIT",
   "type": "module",
   "private": true,
@@ -11,20 +10,16 @@
     "node": ">=24.0.0"
   },
   "devDependencies": {
-    "@phystack/cli": "^6.2.0",
     "@phystack/ts-schema": "^4.4.74",
     "typescript": "~5.9.3"
   },
   "scripts": {
     "predev": "node scripts/init-settings.js",
-    "dev": "phy simulator run .",
+    "dev": "phy-simulator run .",
     "start": "python src/app.py",
     "devbuild": "mkdir -p build && yarn schema && cp -r src/*.py build/ && cp requirements.txt build/ && touch build/index.html",
     "bootstrap": "echo init ok",
     "schema": "mkdir -p build && npx ts-schema src/schema.ts build/",
-    "build": "yarn devbuild && phy app build",
-    "desc": "phy app upload-description",
-    "pub": "phy app publish",
-    "deploy": "phy app deploy"
+    "build": "yarn devbuild && phy app package --out build/bundle.gridapp"
   }
 }

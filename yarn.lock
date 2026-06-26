@@ -26,60 +26,6 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
-"@phystack/cli@^6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/cli/-/cli-6.2.0.tgz#26504a9c70f47e6d1af4f2695852813ffc2c32da"
-  integrity sha512-FEie7cW4RcschWmOyX8w0i2/cqmXH695Xh8+g1D8JmTeFO79+L6qh6ZUCGcEk296MXYqOtq+xxv0HstrfPFvBw==
-  optionalDependencies:
-    "@phystack/phy-darwin-arm64" "6.2.0"
-    "@phystack/phy-darwin-x64" "6.2.0"
-    "@phystack/phy-linux-arm64" "6.2.0"
-    "@phystack/phy-linux-arm64-musl" "6.2.0"
-    "@phystack/phy-linux-x64" "6.2.0"
-    "@phystack/phy-linux-x64-musl" "6.2.0"
-    "@phystack/phy-win32-arm64" "6.2.0"
-    "@phystack/phy-win32-x64" "6.2.0"
-
-"@phystack/phy-darwin-arm64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-darwin-arm64/-/phy-darwin-arm64-6.2.0.tgz#dd68c3dfebcae32f2cdd47a61e0124342ba4d5c0"
-  integrity sha512-dHrtZiP/eaSWUgrysSc97rb/5fX/dS1cBl8fI5XiXmVdP5FZmgDfgA2Lh1Fx+gUSs3QrjsnTAyXgSIB99PBTOg==
-
-"@phystack/phy-darwin-x64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-darwin-x64/-/phy-darwin-x64-6.2.0.tgz#40e930a015b9f7afc997c358d2c89201cfa7eb7e"
-  integrity sha512-ODMUKJnnCPLH8VKIEiwWduO+jAMiePm4iLByP0awp9gIvQhVDidy5LvxIbnqbxUwnPeY7gxLCnG5HGNBOEOxZA==
-
-"@phystack/phy-linux-arm64-musl@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-linux-arm64-musl/-/phy-linux-arm64-musl-6.2.0.tgz#9477f07e2e157aabebd9d76540b90061a387585e"
-  integrity sha512-OvamgSY3RSnqMOzbvTqUN9/jPWRkJbQO6CV0hyUPiqysp0ouswHPlf42Ez2OWUfB4azNBfQ3T+G5iv9jEZZvGA==
-
-"@phystack/phy-linux-arm64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-linux-arm64/-/phy-linux-arm64-6.2.0.tgz#5ebc905440ba0f261e1208692089218a58ce103a"
-  integrity sha512-mUsjxOfGzKwpzynMGeX8drvR3ntDnplRddRV8KyEqCZjl8zzfDKhj2sLmmiXUac2qOoOsaQNqXQ1pw/5t4ilzg==
-
-"@phystack/phy-linux-x64-musl@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-linux-x64-musl/-/phy-linux-x64-musl-6.2.0.tgz#11333fe63c26d7f927489f9d1a0a1f93cb62ae29"
-  integrity sha512-c0nGBIGAlAWa1FAd6DJA0nJUR543m4mLxmyFOEycj6euFHHhAnCoiClfkrx0m5gFJQsSIGDbh82l7wZsjVcF+w==
-
-"@phystack/phy-linux-x64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-linux-x64/-/phy-linux-x64-6.2.0.tgz#5b8b371f6d008046f569c45b158afb8ce0dc85df"
-  integrity sha512-5gNc5Qvn2Iapw0DlV+99zfdCj9hxsddwUdbDcPEr99NnmHS9bCDwxqsD5/7M//x1ZB5azSfb0J9HY8kXGNTOaw==
-
-"@phystack/phy-win32-arm64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-win32-arm64/-/phy-win32-arm64-6.2.0.tgz#fa9bfab28289a94329dd17419c4533c3c5456971"
-  integrity sha512-aCRitNwCFUWOoom/tUDHO81IiU/I6GwMojz1QpVnW4CxpioaQ1jh0kAZaMjwU7LzKPwe4/kHrw0Pj378bsdamQ==
-
-"@phystack/phy-win32-x64@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@phystack/phy-win32-x64/-/phy-win32-x64-6.2.0.tgz#5b79bae3947ab478b8b342fb54afba0c39ed5662"
-  integrity sha512-JRyc21ug7x25eInBpCSp2cCtIphGUubMAvKdxTjGFhquMB78kwWBPTqwj8+5/rz4NDJy71S7uFZyoxYPdVti1A==
-
 "@phystack/ts-schema@^4.4.74":
   version "4.4.74"
   resolved "https://registry.yarnpkg.com/@phystack/ts-schema/-/ts-schema-4.4.74.tgz#a455b81ef1a83d32bba8d1a0300d522bb7d1cea6"

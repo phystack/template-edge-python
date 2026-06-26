@@ -20,7 +20,7 @@ const settingsPath = path.join(settingsDir, "index.json");
  * - If it doesn't exist, generate it from src/schema.ts defaults.
  *
  * To download settings from an installation:
- *   yarn download-settings <installation-name>
+ *   phy installation settings get <installation-id>
  *
  * To reset to schema defaults:
  *   Delete src/settings/index.json and re-run yarn dev
