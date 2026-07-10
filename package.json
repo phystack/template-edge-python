@@ -11,20 +11,16 @@
     "node": ">=24.0.0"
   },
   "devDependencies": {
-    "@phystack/cli": "^6.2.0",
     "@phystack/ts-schema": "^4.4.74",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "@types/node": "^24.6.0"
   },
   "scripts": {
-    "predev": "node scripts/init-settings.js",
-    "dev": "phy simulator run .",
+    "predev": "bun scripts/init-settings.js",
+    "dev": "phy-simulator run . --dev-command 'python src/app.py'",
     "start": "python src/app.py",
-    "devbuild": "mkdir -p build && yarn schema && cp -r src/*.py build/ && cp requirements.txt build/ && touch build/index.html",
-    "bootstrap": "echo init ok",
-    "schema": "mkdir -p build && npx ts-schema src/schema.ts build/",
-    "build": "yarn devbuild && phy app build",
-    "desc": "phy app upload-description",
-    "pub": "phy app publish",
-    "deploy": "phy app deploy"
+    "schema": "mkdir -p build && bunx ts-schema src/schema.ts build/",
+    "build": "bun run schema && cp -r src/*.py build/ && cp requirements.txt build/ && touch build/index.html",
+    "pub": "bun run build && phy app build create $npm_package_name --dir . --push --publish"
   }
 }

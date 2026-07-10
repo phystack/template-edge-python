@@ -44,7 +44,7 @@ phy simulator start
 ```
 
 ```bash
-yarn dev
+bun run dev
 ```
 
 This creates a local simulated twin based on your settings from `src/settings/index.json` (generated from `schema.ts` defaults if the file doesn't exist), builds the Docker image, and runs the container connected to the simulator.
@@ -54,13 +54,13 @@ This creates a local simulated twin based on your settings from `src/settings/in
 Build the `.gridapp` package:
 
 ```bash
-yarn build
+bun run build
 ```
 
 Publish to your tenant (builds the Docker image, pushes to your registry, and uploads the `.gridapp`):
 
 ```bash
-yarn pub
+bun run pub
 ```
 
 For the full walkthrough, see the [Build An Edge App](https://build.phystack.com/tutorials/build-your-first-edge-app/) tutorial.
@@ -84,12 +84,12 @@ meta/                 # Device image and metadata for the app listing
 
 | Script | Description |
 |--------|-------------|
-| `yarn dev` | Run the app locally with the simulator (`phy simulator run .`). Automatically generates settings from schema if missing (via `predev` hook). |
-| `yarn start` | Run the app directly (`python src/app.py`) |
-| `yarn devbuild` | Generate the JSON settings schema and copy Python sources to build directory |
-| `yarn schema` | Generate JSON schema from `src/schema.ts` |
-| `yarn build` | Dev build + `phy app build` to package the `.gridapp` |
-| `yarn pub` | Build Docker image, push to registry, and publish the `.gridapp` to your tenant |
+| `bun run dev` | Run the app locally with the simulator (`phy simulator run .`). Automatically generates settings from schema if missing (via `predev` hook). |
+| `bun run start` | Run the app directly (`python src/app.py`) |
+| `bun run devbuild` | Generate the JSON settings schema and copy Python sources to build directory |
+| `bun run schema` | Generate JSON schema from `src/schema.ts` |
+| `bun run build` | Dev build + `phy app build` to package the `.gridapp` |
+| `bun run pub` | Build Docker image, push to registry, and publish the `.gridapp` to your tenant |
 | `yarn deploy` | Deploy the app directly to a device in developer mode |
 | `yarn desc` | Upload the app description to your tenant |
 
