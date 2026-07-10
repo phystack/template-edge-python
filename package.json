@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "PhyStack Edge App Template (Python)",
   "application-type": "edge",
-  "container-registry": "omborigridregistry.azurecr.io",
   "license": "MIT",
   "type": "module",
   "private": true,

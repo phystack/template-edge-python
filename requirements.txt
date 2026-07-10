@@ -1,2 +1,2 @@
-# Phygrid Edge App Dependencies
+# PhyStack edge app dependencies
 phystack-hub-client>=0.2.0
