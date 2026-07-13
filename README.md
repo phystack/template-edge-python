@@ -20,14 +20,14 @@ bun run build
 
 ```bash
 npm i -g @phystack/device-simulator   # once — provides the phy-simulator binary
-bun run dev                           # simulated device on :55000 + `python src/app.py` inside it
+phy-simulator start                   # terminal 1: simulated device on :55000
+bun run dev                           # terminal 2: `python src/app.py` inside it
 ```
 
-`bun run dev` runs `phy-simulator run .`, which starts the local simulated
-device and launches the app against it — no separate simulator terminal
-needed. Settings for local runs are generated into `src/settings/index.json`
-from the schema defaults (regenerated automatically; delete the file to
-reset).
+`bun run dev` runs `phy-simulator run .`, which creates a local twin on the
+running simulator and launches the app connected to it. Settings for local
+runs are generated into `src/settings/index.json` from the schema defaults
+(regenerated automatically; delete the file to reset).
 
 ## Flow
 

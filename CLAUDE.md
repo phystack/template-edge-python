@@ -11,7 +11,7 @@ that run on PhyOS devices and talk to the platform through
 |---|---|
 | `bun install` | Dev tooling (`ts-schema`, TypeScript) |
 | `pip install -r requirements.txt` | Python runtime dependencies |
-| `bun run dev` | `phy-simulator run . --dev-command 'python src/app.py'` — local simulated device + the app inside it |
+| `bun run dev` | `phy-simulator run . --dev-command 'python src/app.py'` — twin on the running simulator + the app connected to it |
 | `bun run start` | `python src/app.py` — run the app directly |
 | `bun run build` | Compile `src/schema.ts` to `build/`, copy `src/*.py` + `requirements.txt` into `build/`, `touch build/index.html` |
 | `bun run pub` | `bun run build && phy app build create $npm_package_name --dir . --push --publish` |
@@ -22,10 +22,11 @@ container (that happens in `pub` via the CLI).
 
 ## Dev loop
 
-- `bun run dev` needs the standalone simulator installed once:
-  `npm i -g @phystack/device-simulator` (provides the `phy-simulator`
-  binary). It boots a simulated device on `:55000` and runs the app
-  against it.
+- Install the standalone simulator once (`npm i -g @phystack/device-simulator`,
+  provides the `phy-simulator` binary) and start it in a separate terminal:
+  `phy-simulator start` (simulated device on `:55000`). Then `bun run dev`
+  creates a twin on it and runs the app connected to it — `run` requires
+  the server to already be running.
 - The `predev` hook generates `src/settings/index.json` from the schema
   defaults — a local-dev bootstrap only; delete it to regenerate. In
   production, settings arrive on the Edge twin's desired properties.
