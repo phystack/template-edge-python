@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Phygrid Edge App Template (Python)
+PhyStack Edge App Template (Python)
 
 This template demonstrates how to create a Python-based edge app
 using the phystack-hub-client package.
@@ -17,7 +17,7 @@ from phystack.hub_client import connect_phy_client
 
 async def main() -> None:
     """Main application entry point."""
-    print("Starting Phygrid Edge App (Python)...")
+    print("Starting PhyStack Edge App (Python)...")
 
     # Connect to PhyHub
     client = await connect_phy_client()
